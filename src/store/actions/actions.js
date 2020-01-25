@@ -16,7 +16,6 @@ export const sendContactToBase = data => {
 	return async dispatch => {
 		try {
 			await axiosContacts.post('/contacts.json', data);
-			dispatch(getContactsFromBase());
 		} catch (error) {
 			dispatch(contactsError(error))
 		}

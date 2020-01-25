@@ -1,0 +1,22 @@
+.input_form input {
+	display: block;
+	margin: 5px auto;
+	padding: 5px 10px;
+}
+
+.input_form img {
+	width: 150px;
+}
+
+.input_form button {
+	margin-right: 10px;
+	padding: 3px 5px;
+}
+
+.input_form a {
+	text-decoration: none;
+	color: #000;
+	border: 1px solid #ccc;
+	padding: 2px 5px;
+}
+
