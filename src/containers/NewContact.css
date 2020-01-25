@@ -1,3 +1,7 @@
+.new_contact {
+	margin: 15px auto;
+}
+
 .input_form input {
 	display: block;
 	margin: 5px auto;
@@ -10,13 +14,19 @@
 
 .input_form button {
 	margin-right: 10px;
-	padding: 3px 5px;
+	padding: 5px 10px;
+	background-color: darkred;
+	color: white;
+	outline: none;
+	border: none;
+	border-radius: 5px;
 }
 
 .input_form a {
 	text-decoration: none;
-	color: #000;
-	border: 1px solid #ccc;
-	padding: 2px 5px;
+	padding: 3px 5px;
+	background-color: darkred;
+	color: white;
+	border-radius: 5px;
 }
 

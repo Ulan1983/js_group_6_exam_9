@@ -10,14 +10,14 @@ export const CONTACTS_FAILURE = 'CONTACTS_FAILURE';
 // export const changeButtonToFalse = () => ({type: CHANGE_BUTTON_TO_FALSE});
 // export const changeButtonToTrue = () => ({type: CHANGE_BUTTON_TO_TRUE});
 export const contactsSuccess = data => ({type: CONTACTS_SUCCESS, data});
-export const contactsError = error => ({type: CONTACTS_FAILURE, error});
+export const contactsFailure = error => ({type: CONTACTS_FAILURE, error});
 
 export const sendContactToBase = data => {
 	return async dispatch => {
 		try {
 			await axiosContacts.post('/contacts.json', data);
 		} catch (error) {
-			dispatch(contactsError(error))
+			dispatch(contactsFailure(error))
 		}
 	}
 };
@@ -28,7 +28,7 @@ export const getContactsFromBase = () => {
 			const response = await axiosContacts.get('/contacts.json');
 			dispatch(contactsSuccess(response.data));
 		} catch (error) {
-			dispatch(contactsError(error));
+			dispatch(contactsFailure(error));
 		}
 	}
 };
