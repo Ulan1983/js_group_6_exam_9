@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {getContactsFromBase, getId} from "../store/actions/actions";
+import {getContactsFromBase, getId, removeContact} from "../store/actions/actions";
 import {connect} from "react-redux";
 
 import './Contacts.css';
 import Modal from "../components/UI/Modal/Modal";
 import {NavLink} from "react-router-dom";
+
 
 class Contacts extends Component {
 
@@ -56,8 +57,8 @@ class Contacts extends Component {
 						<p style={{fontSize: '20px', fontWeight: 'bold'}}>{this.state.data.name}</p>
 						<p>Phone: {this.state.data.phone}</p>
 						<p>Email: {this.state.data.email}</p>
-						<NavLink to='/edit'>Edit</NavLink>
-						<button>Delete</button>
+						<NavLink to='/edit' >Edit</NavLink>
+						<button onClick={() => this.props.removeContact(this.props.id)}>Delete</button>
 					</div>
 				</Modal>
 
@@ -74,7 +75,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
 	return {
 		getContactsFromBase: () => dispatch(getContactsFromBase()),
-		getId: (id, data) => dispatch(getId(id, data))
+		getId: (id, data) => dispatch(getId(id, data)),
+		removeContact: id => dispatch(removeContact(id))
 	}
 };
 

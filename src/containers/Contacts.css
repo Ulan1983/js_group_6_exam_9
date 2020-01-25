@@ -21,3 +21,16 @@
 	width: 150px;
 	padding-top: 10px;
 }
+
+.card a {
+	text-decoration: none;
+	color: #000;
+	border: 1px solid #000;
+	margin-right: 10px;
+	padding: 5px 20px;
+}
+
+.card button {
+	cursor: pointer;
+	padding: 7px 20px;
+}

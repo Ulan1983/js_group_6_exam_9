@@ -1,4 +1,4 @@
-import {CONTACTS_FAILURE, CONTACTS_SUCCESS} from "../actions/actions";
+import {CONTACTS_FAILURE, CONTACTS_SUCCESS} from "../actions/actionTypes";
 
 const initialState = {
 	contacts: null,

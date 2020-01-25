@@ -1,7 +1,5 @@
 import axiosContacts from "../../axios-contacts";
-
-export const CONTACTS_SUCCESS = 'CONTACTS_SUCCESS';
-export const CONTACTS_FAILURE = 'CONTACTS_FAILURE';
+import {CONTACTS_FAILURE, CONTACTS_SUCCESS} from "./actionTypes";
 
 export const contactsSuccess = data => ({type: CONTACTS_SUCCESS, data});
 export const contactsFailure = error => ({type: CONTACTS_FAILURE, error});
@@ -37,6 +35,17 @@ export const getId = (id, data) => {
 			dispatch(contactsFailure(error))
 		}
 
+	}
+};
+
+export const removeContact = id => {
+	return async dispatch => {
+		try {
+			await axiosContacts.delete('/contacts/' + id + '.json');
+			dispatch(getContactsFromBase());
+		} catch (error) {
+			dispatch(contactsFailure(error));
+		}
 	}
 };
 
