@@ -8,10 +8,10 @@ import Contacts from "./containers/Contacts";
 const App = () => (
     <div className="App">
         <Header/>
-      <Switch>
-          <Route path='/' exact component={Contacts}/>
-          <Route path='/new-' component={NewContact}/>
-      </Switch>
+            <Switch>
+                <Route path='/' exact component={Contacts}/>
+                <Route path='/new-' component={NewContact}/>
+            </Switch>
     </div>
   );
 

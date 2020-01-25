@@ -19,7 +19,8 @@ class NewContact extends Component {
 	submitDataHandler = event => {
 		event.preventDefault();
 		this.props.sendContactToBase(this.state);
-		this.setState({name: '', phone: '', email: '', photo: ''})
+		this.setState({name: '', phone: '', email: '', photo: ''});
+		this.props.history.push('/');
 };
 
 
@@ -48,8 +49,8 @@ class NewContact extends Component {
 }
 
 const mapStateToProps = state => ({
-	contacts: state.cr.contacts,
-	error: state.cr.error
+	contacts: state.contacts,
+	error: state.error
 });
 
 const mapDispatchToProps = dispatch => {

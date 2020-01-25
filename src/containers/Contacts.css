@@ -8,3 +8,16 @@
 	width: 150px;
 	padding-top: 10px;
 }
+
+.modal {
+	border: 1px solid #000;
+}
+.modal img{
+	width: 150px;
+	padding-top: 10px;
+}
+
+.card img {
+	width: 150px;
+	padding-top: 10px;
+}
